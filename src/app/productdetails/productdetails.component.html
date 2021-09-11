@@ -1,0 +1,242 @@
+<div class="container-fluid whitebg">
+<div class="container-fluid " >
+    <div class="row">
+        <div class="col-md-6">
+        <div class="img-zoom-container">
+          <!--    <img id="myimage" #myimage src="{{product?.image}}"  alt="laptop">--->
+           
+            <lib-ngx-image-zoom
+            [thumbImage]=product?.image
+            [fullImage]=product?.image
+            [magnification]="1"
+            [enableScrollZoom]="true"
+            [enableLens]="true"
+            [lensWidth]="200"
+            
+        ></lib-ngx-image-zoom>
+ 
+              
+
+        </div>
+
+
+          
+        </div>
+ <!-- This is a Title product image example -->
+ <div class="col-md-6 p-2">
+
+  <div class="row mb-3 px-3">
+    <span id="productTitle" class="a-size-large a-text-bold h4">{{product?.title}}
+    </span>
+  </div>
+
+<!-- This is a configured  product Information example -->
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">prix(HT):</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size">{{product?.price.toFixed(2)}} DA</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Prix(TTC):</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size">{{product?.price.toFixed(2) *0.19}} DA</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Category:</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size">{{product?.category}}</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Availability:</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size">Yes</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Dimensions:</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size">22.05x18.31x15.46</span>
+    </div>
+  </div>
+
+  
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Bank Offer:</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size"> 20% Credit Cards</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Expiration date:</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size"> 20% Credit Cards</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Display Size:</span>
+    </div>
+    <div class="col-md-8">
+      <span class="a-size">large</span>
+    </div>
+  </div>
+
+  <div class="row mb-1">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">Colors:</span>
+    </div>
+    <div class="col-md-8">
+      <div class="btns-color row ml-1">
+        <div class="radio-color">
+          <input type="radio" style="display: none;" id="r1">
+          <label class="btn-color border rounded" style="background-color: blue; color: blue;" for="r1">aaa</label>
+        </div>
+        <div class="radio-color">
+          <input type="radio" style="display: none;" id="r2">
+          <label class="btn-color border rounded" style="background-color: rgb(255, 251, 0); color: yellow;" for="r2">aaa</label>
+        </div>
+        <div class="radio-color">
+          <input type="radio" style="display: none;" id="r3">
+          <label class="btn-color border rounded" style="background-color: rgb(255, 0, 0); color: red;" for="r3">aaa</label>
+        </div>
+        <div class="radio-color">
+          <input type="radio" style="display: none;" id="r4">
+          <label class="btn-color border rounded" style="background-color: rgb(255, 0, 212); color: rgb(255, 0, 212);" for="r4">aaa</label>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <span class="a-size-base a-text-bold h6">About this item:</span>
+    </div>
+  </div>
+  <div class="row m-1">
+  <p class=" container " style="font-size: small;">
+   {{product?.description}}
+   
+    
+  </p>
+
+  <a href="#" class="mx-1">see more product details </a>
+</div>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="css_quantity input-group" contenteditable="false">
+        <div class="input-group-prepend">
+          <a class="btn btn-secondary js_add_cart_json" aria-label="Remove one" title="Remove one" href="#">
+            <i class="fa fa-minus"></i>
+          </a>
+        </div>
+        <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" value="1"
+          title="" />
+        <div class="input-group-append">
+          <a class="btn btn-secondary float_left js_add_cart_json" aria-label="Add one" title="Add one" href="#">
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-4">
+      <!-- This is a configured button  Add to Cart -->
+      <div>
+        <a role="button" class="btn btn-light d-block d-sm-inline-block" href="#">
+          <i class="fa fa-shopping-cart"></i> Ajouter au panier</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+       <div class="d-flex justify-content-center whitebg row ">
+        <ngb-carousel style="width: 500px; margin-top: 20px;" class=" " >
+            <ng-template    ngbSlide>
+              <img src="{{product?.image}}" style="height: 300px;"  class="d-block w-100"  alt="Random first slide">
+              
+            </ng-template>
+            <ng-template  ngbSlide>
+              <img src="{{product?.image}}" style=" height: 300px;"   class="d-block w-100" alt="Random second slide">
+            
+            </ng-template>
+            <ng-template  ngbSlide>
+              <img src="{{product?.image}}"  style=" height: 300px;"  class="d-block w-100" alt="Random third slide">
+            
+            </ng-template>
+          </ngb-carousel>
+       </div>
+<div class="container ">
+  <div class="row mt-5">
+    <h2>Similar Products</h2>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-3 " *ngFor="let similerproduct of similerproducts; let i=index">
+      <div class="card px-1 " *ngIf="i<4">
+          <a routerLink="/products/{{similerproduct?.id}}" class="p-2">
+            <img class="card-img-top img mt-4"   src="{{similerproduct?.image}} " />
+          </a>
+      
+        <div class=" row mt-5 ">
+       
+          <b style="white-space: nowrap;overflow: hidden; font-weight: bold;" class="h6 col-8">{{similerproduct?.title}}</b>
+          <b class="col-4">{{similerproduct?.price.toFixed(2)}} DA</b>
+
+
+        </div>
+        <div class=" mt-2 p-0 mb-2">
+            <div class="col-12 p-0 mt-3 ml-2">
+                
+  
+              <div class="row d-flex justify-content-between m-1  ">
+                <div class="quantity m-0">
+                    <span class="pqt-minus">-</span>
+                    <input class="pqt" value="1" />
+                    <span class="pqt-plus">+</span>
+                </div>
+                <button class="addtocart mr-2"  (click)="addtocart(similerproduct)">
+                    <div class="pretext " >
+                      <i class="fas fa-cart-plus fa-xs"></i> ajoutez au panier
+                    </div>
+                    
+                 
+                  </button>
+                
+             </div>
+
+              
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+</div>

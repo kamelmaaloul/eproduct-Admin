@@ -1,0 +1,47 @@
+<!------------
+  <form action="" class="px-2 " id="form">
+    <div class=" border badge-light">
+      <div class="input-group">
+  <input type="text"
+         placeholder="Que recherchez-vous ?"
+         [formControl]="myControl"
+         [matAutocomplete]="auto"
+         aria-describedby="button-addon1" 
+         class="form-control border-0"
+         >
+         <div class="input-group-append">
+          <button id="button-addon1" type="submit" class="btn "><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</form>
+------>
+<form action="" class="px-2 " (ngSubmit)="navigateToProcucts($event)" id="form">
+<div class="searchbox">
+  <input type="text" class="searchbox__input"   placeholder="Que recherchez-vous ?"
+  [formControl]="myControl"
+  [matAutocomplete]="auto"
+  [(ngModel)]="opt"
+ 
+
+  
+
+  aria-describedby="button-addon1" />
+
+  <mat-icon class="searchbox__icon  ">search</mat-icon>
+
+ 
+  <mat-autocomplete #auto="matAutocomplete" 
+  
+  [panelWidth]="300">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</div>
+</form>

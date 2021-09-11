@@ -1,0 +1,50 @@
+
+<div class="container-fluid " >
+    <div class="d-flex  flex-wrap justify-content-center "  >
+    
+    
+    
+        <div *ngFor="let item of items; let i=index" >
+        <div class="card m-2 p-1" style="width: 20rem; height: 25rem;"  *ngIf="i<quantity" >
+          <div class="  d-flex justify-content-center mt-2 mb-3">
+            <img class="card-img-top" style="width: 300px; height: 300px;" src="{{item.image}}" alt="Card image cap"  [routerLink]="['/products', item.id]">
+        </div>
+            <div class="card-body pb-0">
+                <div class="row mb-2">
+                    <div class="col-8"  style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">  <p  class="h6">
+                        {{item.title}}
+                    </p></div>
+                  <div class="col-4">    <p class="h6">  {{item.price}}<small>DA</small></p></div>
+                
+                </div>
+                
+              
+         <div class="row d-flex justify-content-between m-1  ">
+            <div class="quantity m-0">
+                <span class="pqt-minus">-</span>
+                <input class="pqt" value="1" />
+                <span class="pqt-plus">+</span>
+            </div>
+            <button class="addtocart m-0" (click)="addtocart(item)">
+                <div class="pretext " >
+                  <i class="fas fa-cart-plus fa-xs"></i> ajoutez au panier
+                </div>
+                
+             
+              </button>
+            
+         </div>
+         </div>
+          </div>
+        </div>
+    
+   
+    
+    </div>
+    <div class="row d-flex justify-content-center mt-5">
+      <button class="btn  more px-3" (click)="more()" *ngIf="items?.length>quantity">voir plus de produit</button>
+        
+    </div>
+    
+    </div>
+    

@@ -1,0 +1,245 @@
+<div class="g-recaptcha" data-sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ"></div>
+<div class="container-fluid  d-flex justify-content-center">
+    <div class="container w-50 box p-2 d-flex justify-content-center">
+        <table class="" *ngIf="show_person_inputs">
+            <tr class="input-container">
+                <td align="center">
+                    <button id="btn-person" type="button" class="btnb" [ngClass]="{'active': !company}" (click)="gotoPerson()">Person</button>
+                    <button id="btn-company" type="button" class="btnb" [ngClass]="{'active': company}" (click)="gotoCompany()">Company</button>
+                </td>
+            </tr>
+            <tr class="input-container">
+                <td><input type="text" id="name" name="name" placeholder="name" required #name></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_name_message" style="color:#ff1900;">name is wrong</tr>
+            <tr class="input-container">
+                <td><input type="text" id="family_name" name="family_name" placeholder="family name" required #familyname></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_familyname_message" style="color:#ff1900;">family name is wrong</tr>
+            <tr>
+                <td class="input-container"><input type="text" id="username" name="username" placeholder="username" required #username></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_Username_message" style="color:#ff1900;">username is wrong</tr>
+            <tr>
+                <td class="input-container">
+                    <input type="password" id="password" name="password" placeholder="password" required minlength="8" maxlength="20" #password>
+                </td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_password_message" style="color:#ff1900;">password is wrong</tr>
+            <tr>
+                <td class="input-container">
+                    <input type="password" id="password1" name="password" placeholder="repeat password" required minlength="8" maxlength="20" #Repassword>
+                </td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_Repassword_message" style="color:#ff1900;">RePassword is is not like password</tr>
+            <tr>
+                <td class="input-container"><input type="mail" id="email" name="email" placeholder="email" required #email></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_email_message" style="color:#ff1900;">email is wrong</tr>
+            <tr>
+                <table style="width:100%;">
+                    <tr>
+                        <td id="lable-birthdate">birth day</td>
+                        <td id="input-birthdate"><input type="date" id="birth_day" name="birth_day" required #birthday></td>
+                    </tr>
+                </table>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_birthdate_message" style="color:#ff1900;">birthdate is wrong</tr>
+            <tr>
+                <table style="width:100%;">
+                    <tr>
+                        <td class="input-container">
+                            <select name="cph" id="first_phone_number" #cph>
+            <option value="+213">Algeria(+213)</option>
+            <option value="+216">Tunisia(+216)</option>
+          </select>
+                        </td>
+                        <td>
+                            <input type="text" id="phone_number" name="phone_number" placeholder="phone number" required #phonenumber>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_phonenumber_message" style="color:#ff1900;">phone number is wrong</tr>
+            <tr class="row mt-2 d-flex justify-content-between">
+                <div class=" mb-2">
+                    <label><br>
+        <span style="color:#000;" class="mb-4">Select Your Image:</span>
+        <br>
+        <input #imageInput
+              type="file"
+              accept="image/*" class="mt-1" style="color:#000;"required 
+              >
+      </label>
+                </div>
+                <div class=" mt-4 mr-2">
+                    <b class="mr-1">{{number1}} + {{number2}} =</b>
+                    <input type="text" style="background-color: white; width: 30px; border: 0.4px solid black ; border-radius: 20%;" #answer>
+                </div>
+            </tr>
+
+            <tr *ngIf="show_Not_Confirm_img_message" style="color:#ff1900;">Select your image</tr>
+            <tr>
+                <td class="input-container" align="right">
+                    <table>
+                        <tr>
+                            <td><button id="btn-return" name="exm" type="button" (click)=" back()">return</button></td>
+                            <!--test i am not robot-->
+                            <td><button id="btn-save" type="submit" (click)="save_person(answer.value,username.value,password.value,Repassword.value,name.value,familyname.value,birthday.value,cph.value,phonenumber.value,email.value,imageInput.value)">save</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr *ngIf="showConfirmMAIL">
+                <td>
+                    <table style="width:100%;">
+                        <tr>
+                            <td align="left">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="ConfirmMAIL" name="mail_code" placeholder="put the confirm mail code" #confirmCode>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="input-container" align="right">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href="http://127.0.0.1/w.php?code1={{code1}}&rec={{mail_rec}}&code2={{code2}}" target="_blank" rel="noopener noreferrer">
+                                                <button id="btn-Send" type="button">Send</button>
+                                            </a>
+                                        </td>
+
+                                        <td><button id="btn-Confirm" type="button" (click)="isConfirm_code_mail(confirmCode.value)">confirm</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table class="" *ngIf="show_company_inputs">
+            <tr class="input-container">
+                <td class=" d-flex justify-content-center ">
+                    <button id="btn-person" type="button" class="btnb " [ngClass]="{'active': !company}" (click)="gotoPerson()">Person</button>
+                    <button id="btn-company" type="button" class="btnb" [ngClass]="{'active': company}" (click)="gotoCompany()">Company</button>
+                </td>
+            </tr>
+            <tr class="input-container">
+                <td><input type="text" id="name" name="name" placeholder="name" required #name></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_name_message" style="color:#ff1900;">name is wrong</tr>
+            <tr>
+                <td class="input-container"><input type="text" id="username" name="username" placeholder="username" required #username></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_Username_message" style="color:#ff1900;">username is wrong</tr>
+            <tr>
+                <td class="input-container">
+                    <input type="password" id="password" name="password" placeholder="password" required minlength="8" maxlength="20" #password>
+                </td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_password_message" style="color:#ff1900;">password is wrong</tr>
+            <tr>
+                <td class="input-container">
+                    <input type="password" id="password1" name="password" placeholder="repeat password" required minlength="8" maxlength="20" #Repassword>
+                </td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_Repassword_message" style="color:#ff1900;">RePassword is is not like password</tr>
+            <tr>
+                <td class="input-container"><input type="mail" id="email" name="email" placeholder="email" required #email></td>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_email_message" style="color:#ff1900;">email is wrong</tr>
+            <tr>
+                <table style="width:100%;">
+                    <tr>
+                        <td class="input-container">
+                            <select name="cph" id="first_phone_number" #cph>
+            <option value="+213">Algeria(+213)</option>
+            <option value="+216">Tunisia(+216)</option>
+          </select>
+                        </td>
+                        <td>
+                            <input type="text" id="phone_number" name="phone_number" placeholder="phone number" required #phonenumber>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            <tr *ngIf="show_Not_Confirm_phonenumber_message" style="color:#ff1900;">phone number is wrong</tr>
+            <tr class="row mt-2 d-flex justify-content-between">
+                <div class=" mb-2">
+                    <label><br>
+        <span style="color:#000;" class="mb-4">Select Your Image:</span>
+        <br>
+        <input #imageInput
+              type="file"
+              accept="image/*" class="mt-1" style="color:#000;"required 
+              >
+      </label>
+                </div>
+                <div class=" mt-4 mr-2">
+                    <b class="mr-1">{{number1}} + {{number2}} =</b>
+                    <input type="text" style="background-color: white; width: 30px; border: 0.4px solid black ; border-radius: 20%;" #answer>
+                </div>
+            </tr>
+
+
+            <tr *ngIf="show_Not_Confirm_img_message" style="color:#ff1900;">Select your image</tr>
+
+            <tr>
+                <td class="input-container" align="right">
+                    <table>
+                        <tr>
+                            <td><button id="btn-return" name="exm" type="button" (click)=" back()">return</button></td>
+                            <!--test i am not robot-->
+                            <td><button id="btn-save" type="submit" (click)="save_conpany(answer.value,username.value,password.value,Repassword.value,name.value,cph.value,phonenumber.value,email.value,imageInput.value)">save</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr *ngIf="showConfirmMAIL">
+                <td>
+                    <table style="width:100%;">
+                        <tr>
+                            <td align="left">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="ConfirmMAIL" name="mail_code" placeholder="put the confirm mail code" #confirmCode>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="input-container" align="right">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href="http://127.0.0.1/w.php?code1={{code1}}&rec={{mail_rec}}&code2={{code2}}" target="_blank" rel="noopener noreferrer">
+                                                <button id="btn-Send" type="button">Send</button>
+                                            </a>
+                                        </td>
+
+                                        <td><button id="btn-Confirm" type="button" (click)="isConfirm_code_mail(confirmCode.value)">confirm</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

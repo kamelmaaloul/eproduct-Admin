@@ -1,0 +1,204 @@
+
+.btnb{
+    color: gray;
+    width: 90px;
+    margin-top: 2%;
+    padding: 5px;
+    margin-right: 20px;
+    background-color: #fff;
+    font-weight: 400;
+    border: 1px solid gray;
+    border-radius: 5px;
+    &:hover{
+        color: white;
+        background-color: gray;
+    }
+}
+.active{
+    color: white;
+        background-color: gray;
+}
+.text-center{
+	color:#fff;	
+	text-transform:uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+.box{
+    background-color: white;
+   border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.19);
+	
+
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:100%;
+    padding:8px 0 5px 0;
+    margin-top: 5%;
+    font-size:16px;
+    color:#000;
+}
+#input-birthdate{ 
+    border:0;
+    padding:0px 0 5px 0;
+    width:100%;
+    margin-top: 15%;
+    margin-left: 10%;
+    font-size:16px;
+    color:#333;
+}
+#input-birthdate input{ 
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:100%;
+    margin-top: 15%;
+    margin-left: 0%;
+    font-size:16px;
+    color:#333;
+}
+#lable-birthdate{ 
+    border:0;
+    width:30%;
+    background:transparent;
+    padding:14% 0 5px 0;
+    font-size:16px;
+    color:#333;
+}
+
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+#phone_number{
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:100%;
+    padding:0px 0 5px 5px;
+    margin: 15% 0% 0% 0%;
+    font-size:16px;
+    color:#333;
+}
+#phone_number:focus{ 
+	border:none;	
+	outline:none;
+	border-bottom:1px solid #e74c3c;	
+}
+#first_phone_number{
+    border:0;
+    border:1px solid #555;  
+    width:100%;
+    padding:0px 0 5px 5px;
+    margin: 20% 0% 0% 0%;
+    font-size:16px;
+    color:#333;
+    border-radius:50px;
+}
+#btn-return{
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: #fff;
+	padding:10px 20px;
+    margin-left: 0%;
+	text-transform:uppercase;
+	margin-top:15%;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    border-radius:50px;
+}
+#btn-image{
+	background-color:#0781d3;
+	outline: none;
+    border: 0;
+    color: #fff;
+    width:355%;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+#btn-save{
+	background-color:#055c2c;
+	outline: none;
+    border: 0;
+    color: rgb(255, 255, 255);
+	padding:10px 20px;
+    margin-left: 10%;
+	text-transform:uppercase;
+	margin-top:15%;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    border-radius:50px;
+}
+#btn-confirm{
+	background-color:#055c2c;
+	outline: none;
+    border: 0;
+    color: rgb(255, 255, 255);
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin: 10% 0% 0% 0%;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    border-radius:50px;
+}
+#ConfirmMAIL{
+    border:0px;
+    border-bottom:1px solid #555;  
+    background:#fff;
+	padding:10px 20px;
+    width:100%;
+    margin: 10% 0% 0% 0%;
+    color:#333;
+    border-radius:10px;
+}
+#btn-Send{
+	outline: none;
+    border: 0;
+	padding:10px 20px;
+    margin-left: 0%;
+	text-transform:uppercase;
+	margin-top:15%;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    border-radius:50px;
+}#btn-Confirm{
+	background-color:#055c2c;
+	outline: none;
+    border: 0;
+    color: rgb(255, 255, 255);
+	padding:10px 20px;
+    margin-left: 10%;
+	text-transform:uppercase;
+	margin-top:15%;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    border-radius:50px;
+}

@@ -1,0 +1,127 @@
+<footer class=" m-0" >
+  
+    <div class="row m-4">
+      <!------------logo and stuff-->
+      <div class="col-md-4 col-lg-4 col-sm-12 mt-2  ">
+        <div class="row justify-content-sm-center justify-content-md-start justify-content-lg-start mt-3">
+        
+          <span class="logo mb-3"><img src="assets\imges\logowhite.png" class="logoimg"/><small> <span class="diffcolor">IT</span>INFINITY</small></span>
+   
+       
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="media-icons row justify-content-sm-center  justify-content-md-start justify-content-lg-start mt-2">
+          <a href="#" ><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a> 
+          
+  
+        </div>
+  
+      </div>
+      <!-----form contact info entreprice-->
+      <div class="col-md-8 col-lg-8 col-sm-12 mt-4 ">
+       <!--- <div class="row">
+          <h3>Women's Day Special Offer All Branded</h3>
+        </div>-->
+        <div class="row">
+          <div class="col-md-5 col-lg-5 col-sm-12">
+            <div class="row">
+              <div class="col-sm-7 col-md-12">
+                <div class="mb-2">
+                  <b class="title ">Notre Entreprise</b>
+                </div>
+    
+                <ul class=" p-0 mt-2"  style="font-size: medium;">
+                  <li class="mt-2" ><i class=" fas fa-phone "> <small> +213(0)21928272</small></i> </li>
+                 <li class="mt-2"><i class="fas fa-map-marker-alt"></i><small> Louis Rouge Charteau neuf ,ElBiar-Alger</small> </li> 
+                 <li class="mt-2"><i class="fas fa-globe"></i><small>Itinfinity-dz.com</small> </li> 
+                </ul>
+              </div>
+              
+                 <div class="col-sm-4 col-md-12 col-lg-12">
+                  <div class="mb-2 mt-3">
+                    <b class="title ">Liens utiles</b>
+                  </div>
+    
+                  <ul class=" p-0 mx-3 listlinks" style="font-size: large;">
+                   <li  ><a>Home</a> </li>
+                   <li  ><a>About Us</a> </li>
+                   <li  ><a>Contact</a> </li>
+     
+                 </ul>
+                 </div>
+            </div>
+          
+            
+          </div>
+          <div class="col-lg-6 col-md-6  col-sm-12">
+            <div class="mb-2">
+              <b class="title ">Nous contacter</b>
+            </div>
+            
+            <form  [formGroup]="form"  #contactform = "ngForm" (ngSubmit) = "onClickSubmit(contactform.value)"  >
+              <div class="form-group">
+  
+                <input formControlName="email" type="email" class="form-control " id="Email" aria-describedby="emailHelp" placeholder="Entrez l'e-mail">
+              
+              <small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.</small>
+              <div *ngIf="f.email.touched && f.email.invalid" >
+                <small class="text-danger" *ngIf="f.email.errors?.required">message  est obligatoire </small>
+              
+                <small class="text-danger" *ngIf="f.email.errors?.email" >Veuillez saisir une adresse e-mail valide.</small>
+            </div>
+            
+             
+              </div>
+              <div class="form-group">
+  
+                <input type="text" formControlName="subject" class="form-control" id="subject" placeholder="sujet">
+                <div *ngIf="f.subject.touched && f.subject.invalid" >
+                  <small class="text-danger" *ngIf="f.subject.errors?.required">message  est obligatoire </small>
+                
+                  <small class="text-danger" *ngIf="f.subject.errors?.maxlength" >La longueur de sujet maximale doit être de 20</small>
+              </div>
+              </div>
+              <div class="form-group">
+  
+                <textarea formControlName="message" class="form-control h-25" id="exampleFormControlTextarea1" rows="3" placeholder="votre message"></textarea>
+                <div *ngIf="f.message.touched && f.message.invalid" >
+                  <small class="text-danger" *ngIf="f.message.errors?.required">message  est obligatoire</small>
+                  
+                  <small class="text-danger" *ngIf="f.message.errors?.minlength" >La longueur du message doit être supérieure à 10</small>
+              </div>
+ 
+              </div>
+              <div class="d-flex justify-content-sm-center justify-content-lg-end justify-content-md-end">
+                <button type="submit" class="btn px-4">Envoyer</button>
+              </div>
+              
+            </form>
+  
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <!------copy right-->
+    <div class=" bottom_text border-top   container-fluid d-md-flex d-lg-flex justify-content-lg-between  justify-content-md-between">
+     
+            <span class="">Copyright © 2021 <a href="#">
+              <img src="assets\imges\logo.png"class="img"/>
+            </a>tous les droits sont réservés</span>
+        
+
+        <span class="">
+          <a href="#" class="mx-2"> politique de confidentialité</a>
+          <a href="#" >Termes et conditions</a>
+        </span>
+   
+         
+     
+    </div>
+
+ 
+</footer>

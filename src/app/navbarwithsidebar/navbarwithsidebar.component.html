@@ -1,0 +1,142 @@
+<mat-toolbar color="is-dark" class="mat-toolbar">
+    <mat-toolbar-row class=" d-flex justify-content-between">
+
+        <span class="p-0 "><a class=" p-0 m-0"><img src="assets\imges\logoo.svg" class="img"/> </a></span>
+
+        <div fxShow="true" class="row ">
+            <div>
+                <p class="mr-md-3 mt-sm-4 mt-4 mt-md-0 mt-lg-0" style="font-size: x-large;">Contact us</p>
+            </div>
+            <div class="d-flex flex-lg-row flex-column flex-md-row flex-sm-column">
+                <p class="mt-sm-3  mt-lg-0 mr-md-2" style="font-size: x-large;">+213(0)21928272</p>
+                <p class="" style="font-size: x-large;">+213(0)21928272</p>
+            </div>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>g_translate</mat-icon>
+            </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                 
+                  <span>français</span>
+                </button>
+            <button mat-menu-item>
+                  
+                  <span>العربية</span>
+                </button>
+
+        </mat-menu>
+    </mat-toolbar-row>
+    <mat-toolbar-row class=" d-flex justify-content-between">
+        <!----------------------search-->
+
+        <!-------------------------------------------->
+
+        <div fxShow="true" fxHide.lt-md class="ml-2">
+            <a class="navlink  " [ngClass]="{'active': true}" routerLinkActive="active" routerLink=''>Home </a>
+            <a class="navlink ml-4">
+                Payer
+              </a>
+            <!---------------------command-->
+            <a [matMenuTriggerFor]="command" routerLinkActive="active" class="ml-4 navlink">
+        Commande
+    </a>
+            <mat-menu #command="matMenu">
+                <button mat-menu-item>
+    
+    <span>Nouvelle commande</span>
+    </button>
+                <button mat-menu-item>
+    
+    <span>Commande reserve</span>
+    </button>
+
+            </mat-menu>
+            <!-------------------------------about-->
+            <a class="navlink ml-4" routerLinkActive="active" routerLink='/aboutus'>About us</a>
+            <a class=" navlink ml-4" routerLinkActive="active" routerLink='/contact'>Contact</a>
+
+
+
+        </div>
+        <!-----------------------group2-->
+        <div class=" d-flex flex-sm-row-reverse  flex-lg-row flex-md-row flex-row-reverse">
+            <div class="icon-button mb-2">
+                <app-search></app-search>
+            </div>
+            <div class="mr-3 mt-2 icon-button">
+
+                <button matBadge="{{totalItem}}" type="button" class="icon-button hover btn" routerLinkActive="active" routerLink="cart" style="font-size: 0.7rem;">
+                 
+               
+                  <mat-icon>shopping_cart</mat-icon>
+                  <span  style="font-size: 0.7rem;" class="badge badge-info position-absolute mt-3 start-100 translate-middle badge rounded-pill bg-dark text-center">{{totalPrice.toFixed(2)}}<small class="m-1 "> DA</small></span>
+                </button>
+
+            </div>
+            <div class=" icon-button ml-3 mt-2" *ngIf="isAuth">
+                <button class="btn hover" style="font-size: 0.7rem;">
+                  
+                  <mat-icon matBadgeColor="warn" matBadge="+2">notifications_none</mat-icon>
+                </button>
+            </div>
+
+            <div class=" icon-button ml-3 mt-2" routerLinkActive="active" routerLink='signin' *ngIf="!isAuth">
+                <button class="btn hover" style="font-size: 0.7rem;">
+                
+                    <mat-icon>person</mat-icon>
+                </button>
+
+            </div>
+            <div class=" icon-button ml-3   mt-1 mr-1" ngbDropdown *ngIf="isAuth">
+
+
+                <img class=" dropdown-toggle img-fluid border border-dark rounded-circle " src="assets\imges\logo.png" ngbDropdownToggle>
+                <div class=" dropdown dropdown-menu-right mt-2" ngbDropdownMenu>
+                    <a class="dropdown-item menu-item" href="#" ngbDropdownItem routerLink="admins" *ngIf="isSuperAdmin"><i class="fa fa-users-cog"></i> Admins </a>
+                    <a class="dropdown-item menu-item" href="#" ngbDropdownItem><i class="fa fa-user-alt"></i> Profile </a>
+                    <a class="dropdown-item menu-item" href="#" ngbDropdownItems><i class="fa fa-cog "></i> Setting</a>
+
+                </div>
+            </div>
+
+        </div>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+            <mat-icon>menu</mat-icon>
+          </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-----------------------------------------sidebar-->
+<mat-sidenav #sidenav class="mat-side mt-2">
+    <mat-nav-list>
+        <a (click)="sidenav.toggle()" mat-list-item class="d-flex justify-content-end">
+            <mat-icon>close</mat-icon>
+        </a>
+        <a class="navlink ml-2" mat-list-item routerLinkActive="active" routerLink=''>Home </a>
+        <a class="navlink ml-2" mat-list-item>
+            Payer
+          </a>
+        <!---------------------command-->
+        <a [matMenuTriggerFor]="command" mat-list-item routerLinkActive="active" class="ml-2 navlink">
+    Commande
+</a>
+        <mat-menu #command="matMenu">
+            <button mat-menu-item>
+
+<span>Commande reserve</span>
+</button>
+            <button mat-menu-item>
+
+<span>Commande reserve</span>
+</button>
+
+        </mat-menu>
+        <!-------------------------------about-->
+        <a class="navlink ml-2" mat-list-item routerLinkActive="active" routerLink='aboutus'>About us</a>
+        <a class=" navlink ml-2" mat-list-item routerLinkActive="active" routerLink='#contact'>Contact</a>
+
+
+
+    </mat-nav-list>
+</mat-sidenav>

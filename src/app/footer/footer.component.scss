@@ -1,0 +1,167 @@
+@import '../styles/colors';
+@import '../Styles/media-queries';
+
+footer{
+  
+  @include tablet{
+    position: relative;
+   
+    bottom: 0;
+  }
+  position: relative;
+  background: $footercolor;
+
+
+  bottom: 0;
+  left: 0;
+  .logo{
+    font-size: xx-large;
+    color: azure;
+  }
+  p{
+    color: rgb(158, 151, 142);
+  }
+
+}
+.diffcolor{
+  color: $blue;
+}
+.logoimg{
+  width: 30px;
+  height: 30px;
+  margin-right: 2px;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: $footercolor;
+}
+.media-icons a{
+  width: 40px;
+    height: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: $white;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+
+  &:nth-child(1){
+  
+    background: $facebook
+  }
+  &:nth-child(1):hover{
+    color: $facebook;
+    background: $white;
+  }
+  &:nth-child(2){
+  
+    background: $twitter;
+  }
+  &:nth-child(2):hover{
+    color: $twitter;
+    background:$white;
+  }
+  &:nth-child(3){
+    background: $instagram;
+  }
+  &:nth-child(3):hover{
+    color: #E1306C;
+    background: $white;
+  }
+  &:nth-child(4){
+    background: $linkedin;
+  }
+  &:nth-child(4):hover{
+    color: $linkedin;
+    background: $white;
+  }
+  &:nth-child(5){
+    background: $googleplus;
+  }
+  &:nth-child(5):hover{
+    color: $googleplus;
+    background: $white;
+  }
+
+}
+p{
+  color: rgb(39, 39, 39);
+}
+.bottom_text{
+  @include mobile{
+   
+    font-size: xx-small;
+  
+    
+  }
+}
+.bottom_text span,a{
+ 
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+  a:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+}
+h3{
+  color: azure;
+}
+.img{
+  width: 20px;
+  height: 20px;
+}
+h4{
+  font-size: large;
+  font-weight: 400;
+  color: $light;
+ 
+
+}
+ul li{
+  margin: 0;
+  list-style: none;
+  color: rgb(194, 191, 191);
+  i{
+    margin-right: 2%;
+  }
+}
+.listlinks a{
+  
+  &:hover{
+    color: $blue;
+    cursor: pointer;
+  
+
+  }
+  
+}
+.title{
+  font-size: large;
+  
+  color:$light;
+}
+.btn{
+  color : $white;
+  border: 1px solid $white;
+  border-radius: 20px;
+
+  font-weight: bold;
+ 
+  
+  &:hover{
+    color: $dark;
+    background-color: $white;
+    
+  }
+}

@@ -1,0 +1,119 @@
+<div class="addadmin">
+    <div class="container">
+        <h1 class="text-center mb-4">Add Admin</h1>
+
+        <div class="row">
+            <div class="col-md-6 offset-3  p-5 rounded border">
+                <form action="#">
+
+                    <div class="row mb-3 d-flex justify-content-center align-content-center">
+                        <div class="col-md-6 d-flex flex-column">
+                            <img [src]="imgURL || 'assets/imges/profile.png' " alt="" class="rounded-circle" style="width: 200px;height: 200px;" />
+                            <label for="image" class="form-label text-center mt-2"><i class="fa fa-upload fa-2x"></i></label>
+                            <input type="file" class="form-control" id="image" accept="image/*" (change)="preview(image.files);" hidden required #image>
+                            <span style="color:red;" *ngIf="message">{{message[0]}}</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" required #username>
+                        <span style="color:red;" *ngIf="message">{{message[1]}}</span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="firstname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="First Name" required #firstname>
+                            <span style="color:red;" *ngIf="message">{{message[2]}}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name" required #lastname>
+                            <span style="color:red;" *ngIf="message">{{message[3]}}</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="birthday" class="form-label">Birthday</label>
+                        <input type="date" class="form-control" id="birthday" required #birthday>
+                        <span style="color:red;" *ngIf="message">{{message[4]}}</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <div class="input-group">
+                            <select class="form-select input-group-text" style="border-top-right-radius: 0;border-bottom-right-radius: 0;" aria-label="select" required #codephone>
+                                <option selected>Code</option>
+                                <option value="+213">+213</option>
+                                <option value="+216">+216</option>
+                              </select>
+                            <input type="tel" class="form-control" style="border-top-left-radius: 0;border-bottom-left-radius: 0;" id="phone" placeholder="Phone" max="9" min="9" required #phone>
+                        </div>
+                        <span style="color:red;" *ngIf="message">{{message[5]}}</span>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required #email>
+                        <span style="color:red;" *ngIf="message">{{message[6]}}</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" required #password>
+                        <span style="color:red;" *ngIf="message">{{message[7]}}</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Confirm password</label>
+                        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" required #confirmpassword>
+                        <span style="color:red;" *ngIf="message">{{message[8]}}</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Product Permissions</label>
+                        <div class="input-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="product_add" #product_add>
+                                <label class="form-check-label" for="product_add">Add</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="product_modify" #product_modify>
+                                <label class="form-check-label" for="product_modify">Modify</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="product_delete" #product_delete>
+                                <label class="form-check-label" for="product_delete">Delete</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Plan Permissions</label>
+                        <div class="input-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="plan_add" #plan_add>
+                                <label class="form-check-label" for="plan_add">Add</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="plan_modify" #plan_modify>
+                                <label class="form-check-label" for="plan_modify">Modify</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="plan_delete" #plan_delete>
+                                <label class="form-check-label" for="plan_delete">Delete</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="add" class="btn btn-primary mb-2 btn-block mt-2" (click)="submit(username.value, firstname.value, lastname.value, birthday.value, codephone.value, phone.value, email.value, password.value, confirmpassword.value, product_add.value, product_modify.value, product_delete.value, plan_add.value, plan_modify.value, plan_delete.value)"> Add</button>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

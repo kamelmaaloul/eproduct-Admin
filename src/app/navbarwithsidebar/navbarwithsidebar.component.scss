@@ -1,0 +1,114 @@
+@import "../Styles/colors";
+::ng-deep .mat-toolbar{
+    z-index: 998;
+    position: fixed;
+    top:0;
+    background-color:white;
+  }
+  ::ng-deep .mat-side{
+    z-index: 998;
+    position: fixed;
+ 
+    right: 0%;
+    background-color:white;
+  }
+  .img{
+    width: 100px; height: 50px;
+}
+
+
+.btn{
+    box-shadow: none;
+}
+.hover{
+    &:hover{
+        color:$blue;
+    }
+}
+
+.fontxlarge{
+    font-size: x-large;
+}
+.fontlarger{
+  font-size: larger;
+}
+.navlink{
+  color: $darkgray;
+  text-decoration: none;
+  &:hover{
+      color: $blue;
+  
+  }
+}
+.btn{
+  box-shadow: none;
+}
+.active{
+  color: $blue;
+}
+.img-fluid{
+  width: 40px;
+  height: 40px;
+}
+////////////////////////////////////////
+.searchbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 53px;
+  transition: 0.4s linear;
+  overflow: hidden;
+
+  .searchbox__input {
+    display: block;
+    appearance: none;
+    width: 100%;
+
+    border: none;
+    outline: none;
+  
+
+    background-color: $white;
+    
+    padding: 10px;
+    color: #24233A;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.4s linear;
+
+    &::placeholder {
+      color: #24233A;
+    }
+  }
+
+  .searchbox__icon {
+    background-color: #FFF;
+    position: absolute;
+    right: calc(53px / 2);
+    top: 50%;
+    transform: translate(50%, -50%);
+  
+    width: 40px;
+    height: 20px;
+
+    pointer-events: none;
+
+  
+  }
+
+  &:focus-within {
+    max-width: 300px;
+
+    .searchbox__input {
+      background-color: #FFF;
+      padding-right: 50px;
+      border-bottom: 1px solid $darkgray;
+    }
+
+    .searchbox__icon {
+      path {
+        fill: #24233A;
+      }
+    }
+  }
+}
